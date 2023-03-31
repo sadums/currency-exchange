@@ -1,4 +1,3 @@
-<!-- <<<<<<< HEAD -->
 <!doctype html>
 <html lang="en">
 
@@ -10,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/631575fb82.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
   <link href="./assets/css/styles.css">
 </head>
 
@@ -19,92 +19,93 @@
     
   </header>
   <main>
-
-
-  <div class="container mx-auto text-center">
-    <h1> 
-      Currency Exchange
-    </h1>
-
-    <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
-  
-      <div class="grow-0 col-span-1">
-                
-        <!--INPUT AMOUNT 1  **I need to fix the focus:border so that it doesn't cut off the placeholder switcheroo-->
-         <div class="flex justify-center">
-             <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
-               <input
-                 type="text"
-                 class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                 id="amt1"
-                 placeholder="enter amount"/>
-               <label
-                 for="amt1"
-                 class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-                 enter amount
-               </label>
-             </div>
-           </div>
-
-             <!--CHOOSE CURRENCY COUNTRY-->
+    
+    
+    <div class="container mx-auto text-center">
+      <h1> 
+        Currency Exchange
+      </h1>
+      
+      <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
+        
+        <div class="grow-0 col-span-1">
+          
+          <!--INPUT AMOUNT 1  **I need to fix the focus:border so that it doesn't cut off the placeholder switcheroo-->
+          <div class="flex justify-center">
+            <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+              <input
+              type="text"
+              class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="amt1"
+              placeholder="enter amount"/>
+              <label
+              for="amt1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+              enter amount
+            </label>
+          </div>
+        </div>
+        
+        <!--CHOOSE CURRENCY COUNTRY-->
         <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country1" type="text">
-         <!--There's got to be a way to populate the countries via Js or API-->   
-         <option>United States</option>
-         <option>Mexico</option>
-        <option>China</option>
+          <!--There's got to be a way to populate the countries via Js or API-->   
+          <option>United States</option>
+          <option>Mexico</option>
+          <option>China</option>
         </select>
-     </div> 
+      </div> 
       
       
-
-
-<!--An arrow icon -->
-<div class="col-span-1 py-5 place-self-center">
-            
-  <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
-  
-</div>
-
-<div>
-  <div class="flex justify-center">
-      <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
-        <input
-          type="text"
-          class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-          id="amt2"
-          placeholder="enter amount"/>
-        <label
-          for="amt2"
-          class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-          enter amount
-        </label>
+      
+      
+      <!--An arrow icon -->
+      <div class="col-span-1 py-5 place-self-center">
+        
+        <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
+        
       </div>
-    </div>
-  
-  <!--CHOOSE CURRENCY COUNTRY-->
-                  <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country2" type="text">
-                      <option>United States</option>
-                      <option>Mexico</option>
-                      <option>China</option>
-                  </select>
-              </div> 
-    </div>
+      
+      <div>
+        <div class="flex justify-center">
+          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+            <input
+            type="text"
+            class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+            id="amt2"
+            placeholder="enter amount"/>
+            <label
+            for="amt2"
+            class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+            enter amount
+          </label>
+        </div>
+      </div>
+      
+      <!--CHOOSE CURRENCY COUNTRY-->
+      <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country2" type="text">
+        <option>United States</option>
+        <option>Mexico</option>
+        <option>China</option>
+      </select>
+    </div> 
   </div>
-
-  <div class="container mx-auto text-center">
-<div> bumper placeholder</div>
-<div>Map Div</div>
 </div>
-   
-  </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
 
-  <script src="./assets/js/script.js"></script>
+<div id="map" class="">
+  <img src="./assets/images/black.png">
+</div>
+<div class="container mx-auto text-center">
+  <div> bumper placeholder</div>
+</div>
+
+</main>
+<footer>
+  <!-- place footer here -->
+</footer>
+
+
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
-=======
-
-<!-- >>>>>>> ba41ae5dbb8adfb4df73327ac3d2cd59bbd95c10 -->
