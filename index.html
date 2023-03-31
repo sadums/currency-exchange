@@ -28,72 +28,90 @@
 
     <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
   
+      <!--*******************************************************FROM AMOUNT*******************************************************-->
+  
       <div class="grow-0 col-span-1">
                 
         <!--INPUT AMOUNT 1  **I need to fix the focus:border so that it doesn't cut off the placeholder switcheroo-->
-         <div class="flex justify-center">
-             <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
-               <input
-                 type="text"
-                 class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                 id="amt1"
-                 placeholder="enter amount"/>
-               <label
-                 for="amt1"
-                 class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-                 enter amount
-               </label>
-             </div>
-           </div>
+         
+        <form id="form">
+          <div class="flex justify-center">
+            <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-black dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 "
+                id="input"/> 
+              <label
+                for="input"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+                
+              </label>
+            </div>
+          </div>
 
-             <!--CHOOSE CURRENCY COUNTRY-->
-        <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country1" type="text">
-         <!--There's got to be a way to populate the countries via Js or API-->   
-         <option>United States</option>
-         <option>Mexico</option>
-        <option>China</option>
-        </select>
-     </div> 
+            <!--CHOOSE CURRENCY COUNTRY-->
+            <label for="currencyFrom">From</label>
+            <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
+             <!--There's got to be a way to populate the countries via Js or API-->   
+             <option>USD</option>
+             <option>MXN</option>
+            <option>CNY</option>
+            </select>
+     
+             </form>
+          </div> 
       
       
 
-
+ <!--*******************************************************ARROW*******************************************************-->
 <!--An arrow icon -->
 <div class="col-span-1 py-5 place-self-center">
             
   <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
-  
+  <br>
+  <button class="bg-blue-500" id="convertBtn" form="fromForm">Convert</button>
+
 </div>
 
-<div>
-  <div class="flex justify-center">
-      <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
-        <input
-          type="text"
-          class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-          id="amt2"
-          placeholder="enter amount"/>
-        <label
-          for="amt2"
-          class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-          enter amount
-        </label>
-      </div>
-    </div>
-  
+
+     <!--*******************************************************TO AMOUNT*******************************************************-->
+
+     <div>
+      <div class="flex justify-center">
+          <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
+            
+            <input 
+              type="text"
+              class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="toAmount"
+              placeholder="enter amount"/>
+            
+            <label
+              for="toAmount"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+            </label>
+          </div>
+        </div>
+
   <!--CHOOSE CURRENCY COUNTRY-->
-                  <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="country2" type="text">
-                      <option>United States</option>
-                      <option>Mexico</option>
-                      <option>China</option>
-                  </select>
-              </div> 
-    </div>
-  </div>
+  <label for="currencyTo">To</label>
+  <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
+      <option>MXN</option>
+      <option>USD</option>
+      <option>CNY</option>
+  </select>
+</div> 
+</div>
+</div>
+
+
+  <!--****************************************************************** MAP AND STUFF *******************************************************************-->
+  
+    
 
   <div class="container mx-auto text-center">
 <div> bumper placeholder</div>
-<div>Map Div</div>
+<div class="height: max-content;">Map Div</div>
 </div>
    
   </main>
@@ -105,6 +123,3 @@
 </body>
 
 </html>
-=======
-
-<!-- >>>>>>> ba41ae5dbb8adfb4df73327ac3d2cd59bbd95c10 -->
