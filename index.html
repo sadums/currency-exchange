@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/631575fb82.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-  <link href="./assets/css/styles.css">
+  <link href="./assets/css/styles.css" rel="stylesheet">
 </head>
 
 <body class="py-5">
@@ -104,13 +104,22 @@
   <!--****************************************************************** MAP AND STUFF *******************************************************************-->
   
     
-<div id="map" class="">
+<div id="map" class="map">
   <img src="./assets/images/black.png">
 </div>
 <div class="container mx-auto text-center">
   <div> bumper placeholder</div>
 </div>
 
+<button id="testingbutton">OPEN POPUP</button>
+<div class="modal" id="modal">
+  <div class="modal-header" id="modal-header">
+    <div class="modal-title" id="modal-title"></div>
+    <button class="modal-exit" id="modal-exit">&times;</button>
+  </div>
+  <div class="modal-body" id="modal-body">
+  </div>
+</div>
 </main>
 <footer>
   <!-- place footer here -->

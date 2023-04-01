@@ -24,7 +24,7 @@ convertBtn.addEventListener('click', (event)=> {
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 }
-    getCurrency() 
+    getCurrency();
    })
 
 
@@ -39,16 +39,50 @@ var map = new L.map('map', mapOptions);
 var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
 
+/* MODALS FOR MARKERS */
+// open modal
+var modalTitle = document.getElementById('modal-title');
+var modalBody = document.getElementById('modal-body');
+var modal = document.getElementById('modal');
+var showModal = function(event){
+  var clickedMarkerData = bankData.get(event.target); 
+  modalTitle.textContent = clickedMarkerData.name
+  modalBody.innerHTML = '';
+  if(clickedMarkerData.address != undefined && clickedMarkerData.address != null){
+    var addressElement = document.createElement("div");
+    addressElement.textContent = "Address: " + clickedMarkerData.address;
+    modalBody.append(addressElement);
+  }
+  if(clickedMarkerData.phone != undefined && clickedMarkerData.phone != null){
+    var phoneElement = document.createElement("div");
+    phoneElement.textContent = "Phone: " + clickedMarkerData.phone;
+    modalBody.append(phoneElement);
+  }
+  if(clickedMarkerData.url != undefined && clickedMarkerData.url != null){
+    var urlElement = document.createElement("a");
+    urlElement.setAttribute("href", "https://" + clickedMarkerData.url);
+    urlElement.setAttribute("target", "_blank");
+    urlElement.textContent = "Website: " + clickedMarkerData.url;
+    modalBody.append(urlElement);
+  }
+  modal.setAttribute('style', 'display: block;');
+}
+// close modal
+var exitModal = document.getElementById('modal-exit');
+exitModal.addEventListener("click", function(){
+  modal.setAttribute('style', 'display: none;');
+})
 
 /* PLACES API CALL */
-var limit = 20; //Limits Results
-var search = "Credit Union";
-var lat = 40.5086; //where to search from
+var bankData = new Map();
+
+var search = "Bank";
+var limit = 20;
+var lat = 40.5086;
 var lon = -112.0125;
 var radius = 20000;
 
-var placesRequestURL = `https://api.tomtom.com/search/2/search/${search}.json?key=gzfilgZ8uJFWF9BCQHsE4daKJN4bToA9&limit=${limit}&lat=${lat}&lon=${lon}&radius=${radius}`;
-
+var placesRequestURL = `https://api.tomtom.com/search/2/categorySearch/${search}.json?key=gzfilgZ8uJFWF9BCQHsE4daKJN4bToA9&limit=${limit}&lat=${lat}&lon=${lon}&radius=${radius}`
 
 var getPlaces = function(){
   fetch(placesRequestURL)
@@ -57,12 +91,20 @@ var getPlaces = function(){
   .then(function(result){
     console.log(result.results.length);
     for(var i = 0; i < result.results.length; i++){
-      console.log(result.results[i].position.lat);
-      console.log(result.results[i].position.lon)
       var marker = new L.Marker([result.results[i].position.lat, result.results[i].position.lon]);
       marker.addTo(map);
+      bankData.set(marker, {
+        'name': result.results[i].poi.name,
+        'address': result.results[i].address.freeformAddress,
+        'phone': result.results[i].poi.phone,
+        'url': result.results[i].poi.url
+      });
+      marker.addEventListener("click", showModal);
     }
     console.log(result);
   })
   .catch(error => console.log('error', error));
 }
+
+getPlaces();
+
