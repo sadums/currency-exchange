@@ -105,13 +105,13 @@
   
     
 <div id="map" class="map">
-  <img src="./assets/images/black.png">
+  <img src="./assets/images/black.png" id="map-base">
 </div>
 <div class="container mx-auto text-center">
   <div> bumper placeholder</div>
 </div>
 
-<button id="testingbutton">OPEN POPUP</button>
+<!-- Bank Marker Modal -->
 <div class="modal" id="modal">
   <div class="modal-header" id="modal-header">
     <div class="modal-title" id="modal-title">Bank Name</div>
@@ -122,6 +122,14 @@
     <a class="modal-phone" id="modal-phone">Bank Phone Number</a>
     <a class="modal-website" id="modal-website">Bank Website</a>
     <a class="modal-maps" id="modal-maps">Google Maps Link</a>
+  </div>
+</div>
+
+<!-- Location Disabled Modal -->
+<div class="modal" id="location-modal">
+  <div class="modal-header" id="location-modal-header">
+    <div class="modal-title">Please enable location in order to see the map.</div>
+    <button class="modal-exit" id="location-modal-exit">&times;</button>
   </div>
 </div>
 </main>

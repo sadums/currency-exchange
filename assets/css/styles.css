@@ -21,7 +21,7 @@ body {
     z-index: 2;
     border: 1px solid black;
     border-radius: 15px;
-    /* display: none; */
+    display: none;
 }
 
 .modal-header {
@@ -42,4 +42,12 @@ body {
 
 .map{
     z-index: 1;
+}
+
+#map-base{
+    display:none;
+}
+
+#location-modal-header{
+    border-bottom: none;
 }
