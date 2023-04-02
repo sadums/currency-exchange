@@ -41,7 +41,6 @@ var getPlaces = function(lat, lon){
   fetch(placesRequestURL)
   .then(response => response.json())
   .then(function(result){
-    console.log(result.results.length);
     for(var i = 0; i < result.results.length; i++){
       var marker = new L.Marker([result.results[i].position.lat, result.results[i].position.lon]);
       marker.addTo(map);
@@ -55,7 +54,6 @@ var getPlaces = function(lat, lon){
       });
       marker.addEventListener("click", showModal);
     }
-    console.log(result);
   })
   .catch(error => console.log('error', error));
 }
