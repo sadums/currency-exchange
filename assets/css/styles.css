@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-
 body {
     font-family: 'Roboto', sans-serif;
     align-items: center;
@@ -23,7 +21,7 @@ body {
     z-index: 2;
     border: 1px solid black;
     border-radius: 15px;
-    display: none;
+    /* display: none; */
 }
 
 .modal-header {
@@ -32,7 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
-  }
+}
 
 .modal-title{
     font-size: 25px;
