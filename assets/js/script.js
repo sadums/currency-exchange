@@ -28,16 +28,9 @@ convertBtn.addEventListener('click', (event)=> {
    })
 
 
-
-
 /* GENERATE MAP DIV */
-var mapOptions = {
-  center:[40.5086, -112.0125], //Where map will start
-  zoom:10
-}
-var map = new L.map('map', mapOptions);
+var map;
 var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
 
 /* MODALS FOR MARKERS */
 // open modal
@@ -51,19 +44,26 @@ var showModal = function(event){
   if(clickedMarkerData.address != undefined && clickedMarkerData.address != null){
     var addressElement = document.createElement("div");
     addressElement.textContent = "Address: " + clickedMarkerData.address;
-    modalBody.append(addressElement);
+    modalBody.prepend(addressElement);
+    var directionsButton = document.createElement("a");
+    directionsButton.setAttribute("href", `https://maps.google.com/?q=${clickedMarkerData.address}`);
+    directionsButton.setAttribute("target", "_blank");
+    directionsButton.textContent = "GOOGLE MAPS";
+    modalBody.append(directionsButton);
   }
   if(clickedMarkerData.phone != undefined && clickedMarkerData.phone != null){
-    var phoneElement = document.createElement("div");
+    var phoneElement = document.createElement("a");
+    phoneElement.setAttribute("href", "tel:" + clickedMarkerData.phone);
+    phoneElement.setAttribute("target", "_blank");
     phoneElement.textContent = "Phone: " + clickedMarkerData.phone;
-    modalBody.append(phoneElement);
+    modalBody.prepend(phoneElement);
   }
   if(clickedMarkerData.url != undefined && clickedMarkerData.url != null){
     var urlElement = document.createElement("a");
     urlElement.setAttribute("href", "https://" + clickedMarkerData.url);
     urlElement.setAttribute("target", "_blank");
     urlElement.textContent = "Website: " + clickedMarkerData.url;
-    modalBody.append(urlElement);
+    modalBody.prepend(urlElement);
   }
   modal.setAttribute('style', 'display: block;');
 }
@@ -97,7 +97,9 @@ var getPlaces = function(){
         'name': result.results[i].poi.name,
         'address': result.results[i].address.freeformAddress,
         'phone': result.results[i].poi.phone,
-        'url': result.results[i].poi.url
+        'url': result.results[i].poi.url,
+        'lat': result.results[i].position.lat,
+        'lon': result.results[i].position.lon
       });
       marker.addEventListener("click", showModal);
     }
@@ -106,5 +108,26 @@ var getPlaces = function(){
   .catch(error => console.log('error', error));
 }
 
-getPlaces();
 
+var testing = function(lat, lon){
+  var mapOptions = {
+    center:[lat, lon], //Where map will start
+    zoom:10
+  }
+  map = new L.map('map', mapOptions);
+  map.addLayer(layer);
+}
+
+const successCallback = (position) => {
+  testing(position.coords.latitude, position.coords.longitude);
+};
+
+const errorCallback = (error) => {
+  console.log(error);
+};
+
+var testButton = document.getElementById("testingbutton");
+
+testButton.addEventListener("click", function(event){
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {timeout:10000});
+})
