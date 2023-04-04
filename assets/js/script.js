@@ -68,6 +68,7 @@ var directionsButton = document.getElementById("modal-maps");
 var addressElement = document.getElementById("modal-address");
 var phoneElement = document.getElementById("modal-phone");
 var urlElement = document.getElementById("modal-website");
+var directionsBtn = document.getElementById("directionsBtn")
 
 var showModal = function(event){
   var clickedMarkerData = bankData.get(event.target);
@@ -78,7 +79,7 @@ var showModal = function(event){
     addressElement.textContent = "Address: " + clickedMarkerData.address;
     directionsButton.setAttribute("href", `https://maps.google.com/?q=${clickedMarkerData.address}`);
     directionsButton.setAttribute("target", "_blank");
-    directionsButton.textContent = "GOOGLE MAPS";
+    directionsBtn.textContent = "Directions";
   }
   // display phone number
   if(clickedMarkerData.phone != undefined && clickedMarkerData.phone != null){

@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+
+
+
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     align-items: center;
     justify-content: center;
     height:100vh;
@@ -10,9 +15,42 @@ body {
     margin: 0;
     text-align: center;
 }
-
+h1 {
+    font-size: 30px;
+}
 .modal{
-    position: fixed;
+    width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+  display:none;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    /* width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+  display: none;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    z-index: 2; */
+    /* position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -21,19 +59,68 @@ body {
     z-index: 2;
     border: 1px solid black;
     border-radius: 15px;
-    display: none;
+    display: none; */
 }
+
+
+/* .modal-exit {
+    width: 30px;
+    font-size: 20px;
+    color: #c0c5cb;
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+  } */
+
+  .close-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+  }
+    
+.close-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+  
+  .topright {
+    position: absolute;
+    right: 0;
+    top: 0
+  }
 
 .modal-header {
     padding: 10px 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     border-bottom: 1px solid black;
+    font-weight: bold;
 }
 
 .modal-title{
-    font-size: 25px;
+    font-size: 18px;
 }
 
 .modal-body p{
@@ -51,3 +138,22 @@ body {
 #location-modal-header{
     border-bottom: none;
 }
+
+.directionsBtn {
+    text-align: center;
+    align-content:center;
+    justify-content: center;
+    border: solid 2px black;
+    width: 100%;
+    margin-top:20px;
+}
+
+.modal-address{
+    width: 100%;
+    }
+.modal-phone{
+    width: 100%;
+    }
+.modal-website{
+    width: 100%;
+    }
