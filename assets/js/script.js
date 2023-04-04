@@ -102,16 +102,14 @@ exitModal.addEventListener("click", function(){
 
 
 /* GENERATE MAP DIV */ 
-var mapBase = document.getElementById("map-base");
 var map;
 var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 var showMap = function(lat, lon){
-  mapBase.setAttribute("style", "display: block;")
   var mapOptions = {
     center:[lat, lon], //Where map will start
     zoom:14 // map zoom
   }
-  map = new L.map('map', mapOptions);
+  map = new L.map('map').setView(mapOptions.center, mapOptions.zoom);
   map.addLayer(layer);
   getPlaces(lat, lon);
 }
