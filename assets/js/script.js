@@ -1,31 +1,63 @@
-convertBtn.addEventListener('click', (event)=> {
-  event.preventDefault()
-  const form = document.getElementById('form');
-  const convertBtn = document.getElementById('convertBtn');
-  var input = document.getElementById('input');
-  var currencyTo = document.getElementById('currencyTo').value;
-  var currencyFrom = document.getElementById('currencyFrom').value;
-  var amount = (input.value);
-  var requestURL = `https://api.apilayer.com/fixer/convert?to=${currencyTo}&from=${currencyFrom}&amount=${amount}`;
-  var myHeaders = new Headers();
+var input = document.getElementById('input');
+var output = document.getElementById('output');
+var currencyTo = document.getElementById('currencyTo');
+var currencyFrom = document.getElementById('currencyFrom');
+var rate = 0;
 
-  myHeaders.append("apikey", "YJtlkQDlPUG4dvDBd01umEs1dtIkBCan");
+var myHeaders = new Headers();
+myHeaders.append("apikey", "v2t5OapkBsl0PwlJb2N10ECS3ZLCqz45");
 
+var callCurrencyAPI = function(){
+  var requestURL = `https://api.apilayer.com/fixer/convert?to=${currencyTo.value}&from=${currencyFrom.value}&amount=5`;
   var requestOptions = {
-  method: 'GET',
-  redirect: 'follow',
-  headers: myHeaders
-};
+    method: 'GET',
+    redirect: 'follow',
+    headers: myHeaders
+  }
 
-   var getCurrency = function(){
-
-    fetch(requestURL, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+  fetch(requestURL, requestOptions)
+  .then(response => response.json())
+  .then(function(result){
+    console.log(result);
+    rate = result.info.rate;
+  })
+  .catch(error => console.log('error', error));
 }
-    getCurrency();
-   })
+callCurrencyAPI();
+
+input.addEventListener("keyup", function(event){  
+  var number = input.value
+  output.value = Math.round(((+number * rate) + Number.EPSILON) * 100) / 100;
+});
+
+output.addEventListener("keyup", function(event){
+  var number = output.value
+  input.value = Math.round(((+number / rate)+ Number.EPSILON) * 100) / 100;
+});
+
+currencyTo.onchange = function(){
+  console.log("clicked");
+  callCurrencyAPI();
+}
+currencyFrom.onchange = function(){
+  console.log("clicked");
+  callCurrencyAPI();
+}
+
+
+
+/* GENERATE MAP DIV */ 
+var map;
+var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+var showMap = function(lat, lon){
+  var mapOptions = {
+    center:[lat, lon], //Where map will start
+    zoom:14 // map zoom
+  }
+  map = new L.map('map').setView(mapOptions.center, mapOptions.zoom);
+  map.addLayer(layer);
+  getPlaces(lat, lon);
+}
 
 
 /* GENERATE MARKERS */
@@ -101,18 +133,6 @@ exitModal.addEventListener("click", function(){
 });
 
 
-/* GENERATE MAP DIV */ 
-var map;
-var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-var showMap = function(lat, lon){
-  var mapOptions = {
-    center:[lat, lon], //Where map will start
-    zoom:14 // map zoom
-  }
-  map = new L.map('map').setView(mapOptions.center, mapOptions.zoom);
-  map.addLayer(layer);
-  getPlaces(lat, lon);
-}
 
 
 /* ASK USER FOR LOCATION */ 
