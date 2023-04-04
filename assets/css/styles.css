@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-
 body {
     font-family: 'Roboto', sans-serif;
     align-items: center;
@@ -11,4 +9,45 @@ body {
     overflow: hidden;
     margin: 0;
     text-align: center;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    z-index: 2;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: none;
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-title{
+    font-size: 25px;
+}
+
+.modal-body p{
+    width: 500px;
+}
+
+.map{
+    z-index: 1;
+}
+
+#map-base{
+    display:none;
+}
+
+#location-modal-header{
+    border-bottom: none;
 }
