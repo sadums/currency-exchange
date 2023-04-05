@@ -5,7 +5,7 @@ var currencyFrom = document.getElementById('currencyFrom');
 var rate = 0;
 
 var myHeaders = new Headers();
-myHeaders.append("apikey", "v2t5OapkBsl0PwlJb2N10ECS3ZLCqz45");
+myHeaders.append("apikey", "bd0eu841vAX8gVDHI9zXS5xzeQ88U78q");
 
 var callCurrencyAPI = function(){
   var requestURL = `https://api.apilayer.com/fixer/convert?to=${currencyTo.value}&from=${currencyFrom.value}&amount=5`;
