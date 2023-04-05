@@ -8,7 +8,7 @@ var myHeaders = new Headers();
 myHeaders.append("apikey", "bd0eu841vAX8gVDHI9zXS5xzeQ88U78q");
 
 var callCurrencyAPI = function(){
-  var requestURL = `https://api.apilayer.com/fixer/convert?to=${currencyTo.value}&from=${currencyFrom.value}&amount=5`;
+  var requestURL = `https://api.apilayer.com/fixer/convert?to=${currencyTo.value.split("-")[0]}&from=${currencyFrom.value.split("-")[0]}&amount=5`;
   var requestOptions = {
     method: 'GET',
     redirect: 'follow',
