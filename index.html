@@ -22,27 +22,25 @@
     
     
     <div class="container mx-auto text-center">
+      
       <h1> 
+        <i class="fa-solid fa-money-bill-1-wave fa-beat"></i>
         Currency Exchange
+        <i class="fa-solid fa-money-bill-1-wave fa-beat"></i>
       </h1>
       
       <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
         
         <div class="grow-0 col-span-1">
           
-          <!--INPUT AMOUNT 1  **I need to fix the focus:border so that it doesn't cut off the placeholder switcheroo-->
+         
           <form id="form">
             <div class="flex justify-center">
               <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                 <input
                   type="text"
-                  class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-black dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 "
-                  id="input"/> 
-                <label
-                  for="input"
-                  class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-                  
-                </label>
+                  class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-black dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
+                  id="input" placeholder="enter amount"/> 
               </div>
             </div>
         
@@ -77,14 +75,10 @@
         
         <input 
           type="text"
-          class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-          id="output"
+          class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
+          id="toAmount"
           placeholder="enter amount"/>
         
-        <label
-          for="toAmount"
-          class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-        </label>
       </div>
     </div>
   
@@ -103,24 +97,36 @@
 
   <!--****************************************************************** MAP AND STUFF *******************************************************************-->
   
+  
+        
     
-<div id="map" class="map" style="width: 600px; height: 400px;">
+  
+  <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5 mx-auto">
+    <div class="grow-0 col-span-1"> 
+      <div class=""></div>
+  </div>
+    <div class="grow-0 col-span-1"> 
+        <div id="map" class="map content-center z-2" style="width: 100%; height: 600px;"></div>
+    </div>
+    <div class="grow-0 col-span-1"> 
+        <div class=""></div>
+    </div>
 </div>
-<div class="container mx-auto text-center">
-  <div> bumper placeholder</div>
-</div>
+
 
 <!-- Bank Marker Modal -->
 <div class="modal" id="modal">
   <div class="modal-header" id="modal-header">
     <div class="modal-title" id="modal-title">Bank Name</div>
-    <button class="modal-exit" id="modal-exit">&times;</button>
+    <button class="modal-exit topright close-button" id="modal-exit">&times;</button>
   </div>
   <div class="modal-body" id="modal-body">
     <div class="modal-address" id="modal-address">Bank Address</div>
     <a class="modal-phone" id="modal-phone">Bank Phone Number</a>
+    <br>
     <a class="modal-website" id="modal-website">Bank Website</a>
-    <a class="modal-maps" id="modal-maps">Google Maps Link</a>
+    <br>
+    <button id="directionsBtn" class="directionsBtn"><a class="modal-maps" id="modal-maps">  <i class="fa-solid fa-route"></i></a></button>
   </div>
 </div>
 
@@ -128,17 +134,24 @@
 <div class="modal" id="location-modal">
   <div class="modal-header" id="location-modal-header">
     <div class="modal-title">Please enable location in order to see the map.</div>
+
     <button class="modal-exit" id="location-modal-exit">&times;</button>
+   
   </div>
 </div>
+
 </main>
+<div class="h-6">
+  
+</div>
 <footer>
-  <!-- place footer here -->
+  Made by Bit Busters
 </footer>
 
 
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
