@@ -168,11 +168,23 @@ h1 {
       color: black;
       text-align: center;
       font-family:cursive ;
+      font-family: monospace;
+      font-size: 40px;
       padding: 60px;
       width: 1700px;
-      height: 300px;;
-     
-
-    
+      height: 300px;
       
     }
+
+
+    .flag-icon {
+      display: inline-block;
+      width: 24px;
+      height: 16px;
+      background-image: url('https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 5px;
+    }
+    
+    
