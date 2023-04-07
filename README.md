@@ -52,7 +52,7 @@ There is a slight chance that the API may be out of calls, if this occurs, pleas
  
  Fixer.io API: https://fixer.io/
  Leaflet: https://leafletjs.com/
- OpenMapTiles: https://openmaptiles.org/
+ OpenStreetMap: https://www.openstreetmap.org/#map=4/38.01/-95.84
  TailwindCss:https://tailwindcss.com/
  FontAwesome:https://fontawesome.com/
  Google Fonts: https://fonts.google.com/
