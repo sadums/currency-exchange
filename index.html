@@ -18,20 +18,16 @@
 
     
     
-    <div class="container mx-auto text-center">
-      <header>
+  <div class="container mx-auto text-center">
+    <header>
       <h1 class=""> 
-        
-        Currency Exchange
-        
+        Currency Exchange  
       </h1>
     </header>
-      
-      <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
-        
+     <main>
+      <section class="currencyconverter">
+      <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5"> 
         <div class="grow-0 col-span-1">
-          
-         
           <form id="form">
             <div class="flex justify-center">
               <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
@@ -41,46 +37,35 @@
                   id="input" placeholder="enter amount"/> 
               </div>
             </div>
-        
         <!--CHOOSE CURRENCY COUNTRY-->
         <label for="currencyFrom">From</label>
         <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
-         <!--There's got to be a way to populate the countries via Js or API-->   
+          
          <option>USD</option>
          <option>MXN</option>
-        <option>CNY</option>
+         <option>CNY</option>
         </select>
- 
          </form>
-      </div> 
-      
-      
-      
-      
+         </div> 
+       
       <!--An arrow icon -->
-      <div class="col-span-1 py-5 place-self-center">
-            
+      <div class="col-span-1 py-5 place-self-center"> 
         <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
         <br>
         <button class="bg-blue-500" id="convertBtn" form="fromForm">Convert</button>
-      
       </div>
        <!--*******************************************************TO AMOUNT*******************************************************-->
 
 <div>
   <div class="flex justify-center">
       <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
-        
         <input 
           type="text"
           class="peer block min-h-[auto] w-full rounded border focus:border-pink-500  py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-400 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
           id="output"
           placeholder="enter amount"/>
-        
       </div>
     </div>
-  
-
   <!--CHOOSE CURRENCY COUNTRY-->
   <label for="currencyTo">To</label>
                   <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
@@ -89,9 +74,9 @@
                       <option>CNY</option>
                   </select>
               </div> 
-    </div>
+        </div>
   </div>
-
+</section>
 
   <!--****************************************************************** MAP AND STUFF *******************************************************************-->
   
@@ -99,15 +84,15 @@
         
     
   
-  <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5 mx-auto">
+  <div class="grid sm:grid-cols-3 row-span-5 gap-1 mt-5 mx-auto">
     <div class="grow-0 col-span-1"> 
-      <div class=""></div>
+      <div class="">test</div>
   </div>
-    <div class="grow-0 col-span-1"> 
-        <div id="map" class="map content-center z-2" style="width: 100%; height: 600px;"></div>
+    <div class="grow-0 col-span-1 content-center"> 
+        <div id="map" class="map content-center z-2 mapsize"></div>
     </div>
     <div class="grow-0 col-span-1"> 
-        <div class=""></div>
+        <div class="">test</div>
     </div>
 </div>
 
@@ -142,7 +127,7 @@
 
   
 
-<foote class="h-10">
+<footer class="h-10">
   Made by Bit Busters
 </footer>
 
