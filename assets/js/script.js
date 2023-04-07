@@ -109,9 +109,12 @@ var showModal = function(event){
   // display address
   if(clickedMarkerData.address != undefined && clickedMarkerData.address != null){
     addressElement.textContent = "Address: " + clickedMarkerData.address;
-    directionsButton.setAttribute("href", `https://maps.google.com/?q=${clickedMarkerData.address}`);
-    directionsButton.setAttribute("target", "_blank");
-    directionsBtn.textContent = "Directions";
+    directionsButton.addEventListener("click", function(){
+      window.open(
+        `https://maps.google.com/?q=${clickedMarkerData.address}`,
+        '_blank'
+      );
+    });
   }
   // display phone number
   if(clickedMarkerData.phone != undefined && clickedMarkerData.phone != null){
