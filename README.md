@@ -50,13 +50,13 @@ There is a slight chance that the API may be out of calls, if this occurs, pleas
 
  The web app utilizes multiple outside sources. Specifically: 
  
- Fixer.io API: 
- Leaflet: 
- OpenMapTiles: 
- TailwindCss:
- FontAwesome:
- Google Fonts: 
- ----------------------------------------^^^^ WE SHOULD LINK THESE^^^^ ----------------------------------------------------------
+ Fixer.io API: https://fixer.io/
+ Leaflet: https://leafletjs.com/
+ OpenMapTiles: https://openmaptiles.org/
+ TailwindCss: https://tailwindcss.com/
+ FontAwesome: https://tailwindcss.com/
+ Google Fonts: https://fonts.google.com/
+ 
 
 ## License
 
