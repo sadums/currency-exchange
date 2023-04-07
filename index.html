@@ -22,15 +22,12 @@
       Currency Exchange
      </h1>
     <!-- place navbar here -->
-    
-    
   </header>
   <main>
     
   
     
     <div class="container mx-auto text-center">
-      
       
       <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
         
@@ -42,7 +39,7 @@
               <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                 <input
                   type="text"
-                  class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-black dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
+                  class="peer block min-h-[auto] w-full rounded border focus:border-orange-500 py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-black dark:placeholder:text-neutral-400 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
                   id="input" placeholder="enter amount"/> 
               </div>
             </div>
@@ -91,7 +88,7 @@
         
         <input 
           type="text"
-          class="peer block min-h-[auto] w-full rounded border focus:border-pink-500 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
+          class="peer block min-h-[auto] w-full rounded border focus:border-pink-500  py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-400 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50%"
           id="output"
           placeholder="enter amount"/>
         
@@ -136,7 +133,7 @@
 
 
 <!-- Bank Marker Modal -->
-<div class="modal" id="modal">
+<div class="modal border-orange-400	text-overflow: clip;" id="modal">
   <div class="modal-header" id="modal-header">
     <div class="modal-title" id="modal-title">Bank Name</div>
     <button class="modal-exit topright close-button" id="modal-exit">&times;</button>
@@ -145,14 +142,14 @@
     <div class="modal-address" id="modal-address">Bank Address</div>
     <a class="modal-phone" id="modal-phone">Bank Phone Number</a>
     <br>
-    <a class="modal-website" id="modal-website">Bank Website</a>
+    <a class="modal-website whitespace-normal" id="modal-website">Bank Website</a>
     <br>
-    <button id="directionsBtn" class="directionsBtn"><a class="modal-maps" id="modal-maps">  <i class="fa-solid fa-route"></i></a></button>
+    <button id="directionsBtn" class="directionsBtn rounded-md"><a class="modal-maps" id="modal-maps">  <i class="fa-solid fa-route"></i></a></button>
   </div>
 </div>
 
 <!-- Location Disabled Modal -->
-<div class="modal" id="location-modal">
+<div class="modal outline-amber-400" id="location-modal">
   <div class="modal-header" id="location-modal-header">
     <div class="modal-title">Please enable location in order to see the map.</div>
 
@@ -162,10 +159,10 @@
 </div>
 
 </main>
-<div class="h-6">
+
   
-</div>
-<footer>
+
+<foote class="h-10">
   Made by Bit Busters
 </footer>
 

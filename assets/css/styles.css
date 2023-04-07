@@ -14,10 +14,14 @@ body {
     overflow: hidden;
     margin: 0;
     text-align: center;
+    color: #212427;
+    background-color: #F5F5F5;
 }
+
 h1 {
     font-size: 30px;
 }
+
 .modal{
     width: 320px;
   display: flex;
@@ -26,6 +30,7 @@ h1 {
   background-color: #fff;
   color: #000;
   text-align: center;
+  border: solid 2px orange;
   border-radius: 20px;
   padding: 30px 30px 70px;
   display:none;
@@ -34,44 +39,11 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; 
-    /* width: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  border-radius: 20px;
-  padding: 30px 30px 70px;
-  display: none;
-  position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
-    z-index: 2; */
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255);
-    width: 500px;
-    z-index: 2;
-    border: 1px solid black;
-    border-radius: 15px;
-    display: none; */
+    background-color: #F5F5F5;
 }
 
 
-/* .modal-exit {
-    width: 30px;
-    font-size: 20px;
-    color: #c0c5cb;
-    align-self: flex-end;
-    background-color: transparent;
-    border: none;
-    margin-bottom: 10px;
-  } */
+
 
   .close-button {
     border: none;
@@ -124,7 +96,7 @@ h1 {
 }
 
 .modal-body p{
-    width: 500px;
+    width: 100%;
 }
 
 .map{
@@ -144,7 +116,7 @@ h1 {
     align-content:center;
     justify-content: center;
     border: solid 2px black;
-    width: 100%;
+    width: 50%;
     margin-top:20px;
 }
 
@@ -156,35 +128,22 @@ h1 {
     }
 .modal-website{
     width: 100%;
-    }
+ }
 
 
-    .banner{
-      
-      background-image: url(https://static.vecteezy.com/system/resources/previews/005/420/429/non_2x/world-map-on-blue-sky-background-banner-free-vector.jpg);
-      background-color: white;
-      background-repeat: no-repeat;
-      background-size:cover;
-      color: black;
-      text-align: center;
-      font-family:cursive ;
-      font-family: monospace;
-      font-size: 40px;
-      padding: 60px;
-      width: 1700px;
-      height: 300px;
-      
-    }
+.banner{
 
+  background-image: url(https://static.vecteezy.com/system/resources/previews/005/420/429/non_2x/world-map-on-blue-sky-background-banner-free-vector.jpg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: black;
+  text-align: center;
+  font-family:cursive ;
+  font-family: monospace;
+  font-size: 40px;
+  padding: 60px;
+  width: 1700px;
+  height: 300px;
 
-    .flag-icon {
-      display: inline-block;
-      width: 24px;
-      height: 16px;
-      background-image: url('https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      margin-right: 5px;
-    }
-    
-    
+}

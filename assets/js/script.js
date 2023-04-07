@@ -151,9 +151,5 @@ const locationDisabled = (error) => {
   console.log(error);
   locationModal.setAttribute("style", "display: block;");
 };
+
 navigator.geolocation.getCurrentPosition(locationEnabled, locationDisabled, {timeout:10000});
-
-
-  
-    
-  
