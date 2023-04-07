@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Poppins:wght@500&display=swap');
 
 /* Styles body */
 body {
@@ -14,25 +14,35 @@ body {
     background-color: #F5F5F5;
 }
 
-/* Banner styling */
-.banner{
-    background-image: url(https://static.vecteezy.com/system/resources/previews/005/420/429/non_2x/world-map-on-blue-sky-background-banner-free-vector.jpg);
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size:cover;
-    color: black;
-    text-align: center;
-    font-family:cursive ;
-    font-family: monospace;
-    font-size: 40px;
-    padding: 60px;
+.hero {
+    position: relative; 
+    height: 30vh;
     width: 100%;
-    height: 300px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* This allows us to keep the text opaque*/
+.hero::before {    
+      content: "";
+      background-image:url(https://static.vecteezy.com/system/resources/previews/005/420/429/non_2x/world-map-on-blue-sky-background-banner-free-vector.jpg);
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 70%;
+}
 
-  /* h1 styling */
 h1 {
-    font-size: 50px;
+  position: relative;
+  color: #ffffff;  
+  font-size: 5rem;
+  line-height: 0.9;
+  text-align: center;
+  font-weight: bold;
+  color: #212427;
 }
 
 
