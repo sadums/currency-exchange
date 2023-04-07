@@ -1,7 +1,4 @@
 <!doctype html>
-
-
-
 <html lang="en">
  
 <head>
@@ -10,31 +7,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="svgn" href="./assets/images/money-bill-wave-solid.svg">
+  <!--FAVICON-->
+  <link rel="icon" type="svgn" href="./assets/images/money-bill-wave-solid.svg">
+  <!--TailWinds CDN-->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!--Font Awesome-->
   <script src="https://kit.fontawesome.com/631575fb82.js" crossorigin="anonymous"></script>
+  <!--Leaflet styleshet-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!--Custom stylesheet-->
   <link href="./assets/css/styles.css" rel="stylesheet">
 </head>
 
-<body class="">
+<body>
   <header class="banner">
-    <h1>
-      Currency Exchange
-     </h1>
-    <!-- place navbar here -->
+      <h1>
+        Currency Exchange
+      </h1>
   </header>
+  
+  <!--Begin MAIN-->
   <main>
     
-  
-    
+<!--Layout divs-->
     <div class="container mx-auto text-center">
-      
       <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
-        
         <div class="grow-0 col-span-1">
           
-         
+  <!--FORM/INPUT: "FROM" country currency-->
           <form id="form">
             <div class="flex justify-center">
               <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
@@ -45,44 +45,32 @@
               </div>
             </div>
         
-        <!--CHOOSE CURRENCY COUNTRY-->
+<!--DROPDOWN: "FROM" country currency-->
         <label for="currencyFrom">From</label>
-        <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
-         <!--There's got to be a way to populate the countries via Js or API-->   
-        
-       
-<!-- ADDED FLAG ICON TO OPTION MENUuu-->
-
-        
-
-        <option>&#127474;&#127485MXN- Mexican Peso </option>
-        <option> &#127482;&#127480USD-US Dollar</option>
-        <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
-        <option>&#127462;&#127482AUD-Australian Dollar</option>
-        <option>&#127466;&#127482EURO-Euro </option>
-        <option>&#127464;&#127462CAD-Canadian Dollar</option>
-        <option>&#127468;&#127463GBP-British Pound</option>
-        <option>&#127471;&#127477JPY-Japanese Yen</option>
-        
-
-        </select>
- 
+          <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
+            <option>&#127474;&#127485MXN- Mexican Peso </option>
+            <option> &#127482;&#127480USD-US Dollar</option>
+            <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
+            <option>&#127462;&#127482AUD-Australian Dollar</option>
+            <option>&#127466;&#127482EURO-Euro </option>
+            <option>&#127464;&#127462CAD-Canadian Dollar</option>
+            <option>&#127468;&#127463GBP-British Pound</option>
+            <option>&#127471;&#127477JPY-Japanese Yen</option>
+          </select>
          </form>
       </div> 
       
       
       
       
-      <!--An arrow icon -->
+<!--Arrow icon -->
       <div class="col-span-1 py-5 place-self-center">
-            
         <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
         <br>
-        
-      
       </div>
-       <!--*******************************************************TO AMOUNT*******************************************************-->
+       
 
+ <!--FORM/INPUT: "TO" country currency-->
 <div>
   <div class="flex justify-center">
       <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
@@ -97,7 +85,7 @@
     </div>
   
 
-  <!--CHOOSE CURRENCY COUNTRY-->
+  <!--DROPDOWN: "TO" country currency-->
   <label for="currencyTo">To</label>
                   <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
                     <option>&#127474;&#127485MXN- Mexican Peso </option>
@@ -114,9 +102,9 @@
   </div>
 
 
-  <!--****************************************************************** MAP AND STUFF *******************************************************************-->
+  <!--********************************END OF FORM **************************************************-->
   
-  
+  <!--Map div-->
 <div id="map" class="map"></div>
 
 
@@ -149,12 +137,12 @@
 </main>
 
   
-
-<foote class="h-10">
+<!--Footer-->
+<footer class="h-10">
   Made by Bit Busters
 </footer>
 
-
+<!--Script Tags for leaflet and our JS file-->
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script src="./assets/js/script.js"></script>
 

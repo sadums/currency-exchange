@@ -11,7 +11,7 @@ Though the process of looking up an exchange rate and searching a bank location 
 
 There is no installation required to use this app other than to visit the URL of the deployed site which can be found here:
 
-----------------------------------------INSERT GITHUB PAGES LINK----------------------------------------------------------
+https://sadums.github.io/currency-exchange/
 
 ## Usage
 
@@ -53,7 +53,7 @@ There is a slight chance that the API may be out of calls, if this occurs, pleas
  Fixer.io API: https://fixer.io/
  Leaflet: https://leafletjs.com/
  OpenStreetMap: https://www.openstreetmap.org/#map=4/38.01/-95.84
- TailwindCss:https://tailwindcss.com/
+ TailwindCSS:https://tailwindcss.com/
  FontAwesome:https://fontawesome.com/
  Google Fonts: https://fonts.google.com/
  ----------------------------------------^^^^ WE SHOULD LINK THESE^^^^ ----------------------------------------------------------
