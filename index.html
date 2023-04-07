@@ -20,9 +20,11 @@
 </head>
 
 <body>
-  <header class="heading">
-      <h1 class="text-6xl font-bold">
-      CURRENCY EXCHANGE
+  <header class="banner w-full">
+      <h1 class="self-center text-6xl font-bold box-decoration-clone inset-y-0 left-0 ps-40 bg-gradient-to-r from-slate-300 px-2">
+      CURRENCY
+      <br>
+       EXCHANGE
       </h1>
   </header>
   
@@ -32,11 +34,12 @@
 <!--Layout divs-->
     <div class="container mx-auto text-center">
       <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
-        <div class="grow-0 col-span-1 outline">
+        <div class="grow-0 col-span-1">
           
   <!--FORM/INPUT: "FROM" country currency-->
+  <div class=" shadow-md shadow-slate-400 bg-slate-200 p-2 rounded-md">
           <form id="form">
-            <div class="flex justify-center outline">
+            <div class="flex justify-center">
               <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
                 <input
                   type="text"
@@ -46,7 +49,7 @@
             </div>
         
 <!--DROPDOWN: "FROM" country currency-->
-        <label for="currencyFrom">From</label>
+        <label for="currencyFrom" class="">From</label>
           <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
             <option>&#127474;&#127485MXN- Mexican Peso </option>
             <option> &#127482;&#127480USD-US Dollar</option>
@@ -59,7 +62,7 @@
           </select>
          </form>
       </div> 
-      
+    </div>
       
       
       
@@ -71,8 +74,9 @@
        
 
  <!--FORM/INPUT: "TO" country currency-->
-<div class="outline">
-  <div class="flex justify-center outline">
+ <div class="shadow-md shadow-slate-400 bg-slate-200 p-2 rounded-md shadow-md">
+<div>
+  <div class="flex justify-center ">
       <div class="relative mb-3 xl:w-96" data-te-input-wrapper-init>
         
         <input 
@@ -86,8 +90,8 @@
   
 
   <!--DROPDOWN: "TO" country currency-->
-  <label for="currencyTo">To</label>
-                  <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
+  <label for="currencyTo" class="m-3">To</label>
+                  <select class="appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
                     <option>&#127474;&#127485MXN- Mexican Peso </option>
                     <option> &#127482;&#127480USD-US Dollar</option>
                     <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
@@ -98,6 +102,7 @@
                     <option>&#127471;&#127477JPY-Japanese Yen</option>
                   </select>
               </div> 
+            </div>
     </div>
   </div>
 
@@ -105,7 +110,7 @@
   <!--********************************END OF FORM **************************************************-->
   
   <!--Map div-->
-<div id="map" class="map"></div>
+<div id="map" class="map shadow-slate-400 shadow-lg"></div>
 
 
 <!-- Bank Marker Modal -->

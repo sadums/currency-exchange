@@ -17,25 +17,27 @@ body {
 h1 {
     position: relative;
     line-height: 0.9;
-    text-align: center;
     color: #212427;
+    height: 100%;
+    padding-top: 2%;
+
   }
   
 
-.heading {
+.banner {
     position: relative; 
     height: 30vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 /* This allows us to keep the text opaque*/
-.heading::before {    
+.banner::before {    
       content: "";
       background-image:url(https://static.vecteezy.com/system/resources/previews/005/420/429/non_2x/world-map-on-blue-sky-background-banner-free-vector.jpg);
       background-size: cover;
+      background-repeat: no-repeat;
       position: absolute;
       top: 0px;
       right: 0px;
@@ -43,13 +45,14 @@ h1 {
       left: 0px;
       opacity: 70%;
       border-bottom: 5px solid #AAD3E0;
+      
 }
 
 
 /*keepts inputs towards middle of page*/
 main {
-    padding-right: 300px;
-    padding-left: 300px;
+    padding-right: 25%;
+    padding-left: 25%;
 }
 
 /* sets height of everything above map */
@@ -163,7 +166,7 @@ main {
 .map{
     height: 600px;
     width: 100%;
-    margin: auto;
+   
     margin-top: 50px;
     border-radius: 25px;
     transition: 0.5s;
@@ -180,9 +183,10 @@ footer {
     background-color: white;
 }
 
-/* Media query for map size at lesser width */
-/* @media only screen and (max-width: 1024px) {
+Media query for map size at lesser width */
+ @media only screen and (max-width: 1024px) {
     .map{
         width: 100%;
     }
-} */
+}
+
