@@ -1,6 +1,9 @@
 <!doctype html>
-<html lang="en">
 
+
+
+<html lang="en">
+ 
 <head>
   <title>Bit Busters</title>
   <!-- Required meta tags -->
@@ -14,17 +17,17 @@
 </head>
 
 <body class="py-5">
-
+  <header class="banner">
+    <h1>
+      Currency Exchange
+     </h1>
+    <!-- place navbar here -->
+  </header>
+  <main>
     
+  
     
     <div class="container mx-auto text-center">
-      <header>
-      <h1 class=""> 
-        
-        Currency Exchange
-        
-      </h1>
-    </header>
       
       <div class="grid lg:grid-cols-3 row-span-5 gap-1 mt-5">
         
@@ -45,9 +48,22 @@
         <label for="currencyFrom">From</label>
         <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
          <!--There's got to be a way to populate the countries via Js or API-->   
-         <option>USD</option>
-         <option>MXN</option>
-        <option>CNY</option>
+        
+       
+<!-- TRYING TO ADD FLAG ICON TO OPTION MENU-->
+
+        
+
+        <option>&#127474;&#127485MXN- Mexican Peso </option>
+        <option> &#127482;&#127480USD-US Dollar</option>
+        <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
+        <option>&#127462;&#127482AUD-Australian Dollar</option>
+        <option>&#127466;&#127482EURO-Euro </option>
+        <option>&#127464;&#127462CAD-Canadian Dollar</option>
+        <option>&#127468;&#127463GBP-British Pound</option>
+        <option>&#127471;&#127477JPY-Japanese Yen</option>
+        
+
         </select>
  
          </form>
@@ -61,7 +77,7 @@
             
         <i class="fa-solid fa-arrow-right-arrow-left fa-xl"></i>
         <br>
-        <button class="bg-blue-500" id="convertBtn" form="fromForm">Convert</button>
+        
       
       </div>
        <!--*******************************************************TO AMOUNT*******************************************************-->
@@ -83,9 +99,14 @@
   <!--CHOOSE CURRENCY COUNTRY-->
   <label for="currencyTo">To</label>
                   <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
-                      <option>MXN</option>
-                      <option>USD</option>
-                      <option>CNY</option>
+                    <option>&#127474;&#127485MXN- Mexican Peso </option>
+                    <option> &#127482;&#127480USD-US Dollar</option>
+                    <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
+                    <option>&#127462;&#127482AUD-Australian Dollar</option>
+                    <option>&#127466;&#127482EURO-Euro </option>
+                    <option>&#127464;&#127462CAD-Canadian Dollar</option>
+                    <option>&#127468;&#127463GBP-British Pound</option>
+                    <option>&#127471;&#127477JPY-Japanese Yen</option>
                   </select>
               </div> 
     </div>

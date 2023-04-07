@@ -127,5 +127,23 @@ h1 {
     width: 100%;
     }
 .modal-website{
-    width: 100%
-    }
+    width: 100%;
+ }
+
+
+.banner{
+
+  background-image: url(https://static.vecteezy.com/system/resources/previews/005/420/429/non_2x/world-map-on-blue-sky-background-banner-free-vector.jpg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: black;
+  text-align: center;
+  font-family:cursive ;
+  font-family: monospace;
+  font-size: 40px;
+  padding: 60px;
+  width: 1700px;
+  height: 300px;
+
+}
