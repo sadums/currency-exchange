@@ -163,6 +163,9 @@ main {
 /* Modal styling ends here */
 
 /* Map styling */
+.map-container{
+    padding-bottom: calc(10vh + 15px);
+}
 
 .map{
     height: 600px;
@@ -184,7 +187,7 @@ footer {
     background-color: white;
 }
 
-Media query for map size at lesser width */
+/* Media query for map size at lesser width */
  @media only screen and (max-width: 1024px) {
     .map{
         width: 100%;

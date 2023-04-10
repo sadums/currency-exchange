@@ -51,14 +51,14 @@
 <!--DROPDOWN: "FROM" country currency-->
         <label for="currencyFrom" class="">From</label>
           <select class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyFrom" type="text">
-            <option>&#127474;&#127485MXN- Mexican Peso </option>
-            <option> &#127482;&#127480USD-US Dollar</option>
-            <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
-            <option>&#127462;&#127482AUD-Australian Dollar</option>
-            <option>&#127466;&#127482EURO-Euro </option>
-            <option>&#127464;&#127462CAD-Canadian Dollar</option>
-            <option>&#127468;&#127463GBP-British Pound</option>
-            <option>&#127471;&#127477JPY-Japanese Yen</option>
+            <option>MXN-Mexican Peso &#127474;&#127485;</option>
+            <option>USD-US Dollar &#127482;&#127480;</option>
+            <option>CNY-Chinese Yuan Reminbi &#127464;&#127475;</option>
+            <option>AUD-Australian Dollar &#127462;&#127482;</option>
+            <option>EURO-Euro &#127466;&#127482;</option>
+            <option>CAD-Canadian Dollar &#127464;&#127462;</option>
+            <option>GBP-British Pound &#127468;&#127463;</option>
+            <option>JPY-Japanese Yen &#127471;&#127477;</option>
           </select>
          </form>
       </div> 
@@ -92,14 +92,14 @@
   <!--DROPDOWN: "TO" country currency-->
   <label for="currencyTo" class="m-3">To</label>
                   <select class="appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="currencyTo" type="text">
-                    <option>&#127474;&#127485MXN- Mexican Peso </option>
-                    <option> &#127482;&#127480USD-US Dollar</option>
-                    <option> &#127464;&#127475CNY;-Chinese Yuan Reminbi</option>
-                    <option>&#127462;&#127482AUD-Australian Dollar</option>
-                    <option>&#127466;&#127482EURO-Euro </option>
-                    <option>&#127464;&#127462CAD-Canadian Dollar</option>
-                    <option>&#127468;&#127463GBP-British Pound</option>
-                    <option>&#127471;&#127477JPY-Japanese Yen</option>
+                    <option>MXN-Mexican Peso &#127474;&#127485;</option>
+                    <option>USD-US Dollar &#127482;&#127480;</option>
+                    <option>CNY-Chinese Yuan Reminbi &#127464;&#127475;</option>
+                    <option>AUD-Australian Dollar &#127462;&#127482;</option>
+                    <option>EURO-Euro &#127466;&#127482;</option>
+                    <option>CAD-Canadian Dollar &#127464;&#127462;</option>
+                    <option>GBP-British Pound &#127468;&#127463;</option>
+                    <option>JPY-Japanese Yen &#127471;&#127477;</option>
                   </select>
               </div> 
             </div>
@@ -110,7 +110,9 @@
   <!--********************************END OF FORM **************************************************-->
   
   <!--Map div-->
-<div id="map" class="map shadow-slate-400 shadow-lg"></div>
+<div class="map-container">
+  <div id="map" class="map shadow-slate-400 shadow-lg"></div>
+</div>
 
 
 <!-- Bank Marker Modal -->
@@ -133,9 +135,7 @@
 <div class="modal outline-amber-400" id="location-modal">
   <div class="modal-header" id="location-modal-header">
     <div class="modal-title">Please enable location in order to see the map.</div>
-
     <button class="modal-exit" id="location-modal-exit">&times;</button>
-   
   </div>
 </div>
 
