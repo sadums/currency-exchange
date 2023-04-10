@@ -3,12 +3,27 @@ var output = document.getElementById('output');
 var currencyTo = document.getElementById('currencyTo');
 var currencyFrom = document.getElementById('currencyFrom');
 var rate = 0;
+var rateSelected = false;
 
 var myHeaders = new Headers();
-myHeaders.append("apikey", "fz5x4eUzyFAFE8FRY36k7sQbsQhwsui3");
+myHeaders.append("apikey", "rpfEgYQA7e6eroLVSbgIXY5IZDrWs9sb");
 
 var callCurrencyAPI = function(){
-  var requestURL = `https://api.apilayer.com/fixer/convert?to=${currencyTo.value.split("-")[0]}&from=${currencyFrom.value.split("-")[0]}&amount=5`;
+  var to = currencyTo.value.split("-")[0];
+  var from = currencyFrom.value.split("-")[0];
+  if(!rateSelected){
+    console.log(localStorage.getItem('currencyToValue'));
+    console.log(localStorage.getItem('currencyFromValue'));
+    if(localStorage.getItem('currencyToValue') != null || localStorage.getItem('currencyToValue') != undefined){
+      to = localStorage.getItem('currencyToValue').split("-")[0];
+      currencyTo.value = localStorage.getItem('currencyToValue');
+    }
+    if(localStorage.getItem('currencyFromValue') != null || localStorage.getItem('currencyFromValue') != undefined){
+      from = localStorage.getItem('currencyFromValue').split("-")[0];
+      currencyFrom.value = localStorage.getItem('currencyFromValue');
+    }
+  }
+  var requestURL = `https://api.apilayer.com/fixer/convert?to=${to}&from=${from}&amount=5`;
   var requestOptions = {
     method: 'GET',
     redirect: 'follow',
@@ -20,28 +35,34 @@ var callCurrencyAPI = function(){
   .then(function(result){
     console.log(result);
     rate = result.info.rate;
+    inputConvert();
+    outputConvert();
   })
   .catch(error => console.log('error', error));
 }
 callCurrencyAPI();
 
-input.addEventListener("keyup", function(event){  
+function inputConvert(event){  
   var number = input.value
   output.value = Math.round(((+number * rate) + Number.EPSILON) * 100) / 100;
-});
+}
 
-output.addEventListener("keyup", function(event){
+function outputConvert(event){
   var number = output.value
   input.value = Math.round(((+number / rate)+ Number.EPSILON) * 100) / 100;
-});
+}
+input.addEventListener("keyup", inputConvert);
+output.addEventListener("keyup", outputConvert);
 
 currencyTo.onchange = function(){
-  console.log("clicked");
   callCurrencyAPI();
+  rateSelected = true;
+  localStorage.setItem('currencyToValue', currencyTo.value);
 }
 currencyFrom.onchange = function(){
-  console.log("clicked");
   callCurrencyAPI();
+  rateSelected = true;
+  localStorage.setItem('currencyFromValue', currencyFrom.value);
 }
 
 
