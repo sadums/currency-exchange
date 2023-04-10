@@ -163,6 +163,9 @@ main {
 /* Modal styling ends here */
 
 /* Map styling */
+.map-container{
+    padding-bottom: calc(10vh + 15px);
+}
 
 .map{
     height: 600px;
