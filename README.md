@@ -30,15 +30,15 @@ Beneath the inputs, the user will find a map which shows pins/locators for all b
     - information about bank upon click
     - option to be taken to Google Maps for directions to selected location
 
-## Images & GIFs
+## Images & GIF
 
----------------------------------------- I will add these when our site is final!!! ---------------------------------------------
+![](/assets/images/app-screenshot-1.png)
+![](/assets/images/app-screenshot-2.png)
+![](/assets/images/app-gif.gif)
 
 ## Bugs
 
-There is a slight chance that the API may be out of calls, if this occurs, please contact the team or....
-
----------------------------------------- PLAN FOR THIS? ----------------------------------------------------------
+There is a slight chance that the API may be out of calls, if this occurs, please contact the team. 
 
 ## Credits
  
